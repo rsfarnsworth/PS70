@@ -1,40 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div style="align-items: left; justify-content:left;" class="container-fluid">
-    <h3 class="nav-title"> PS70: Intro to Digital Fabrication</h3>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="./index.html">Home</a></h4>
-      <h4><a class="nav-link" href="./about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
+    <!-- UIKit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit-icons.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+    <title>About</title>
+
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <link rel="icon" href="ps70_icon.svg">
+</head>
 
 <body>
 
+    <nav class="uk-navbar uk-navbar-container uk-navbar-transparent uk-margin" uk-navbar>
+        <div class="uk-navbar-left uk-margin-medium-left">
+            <a class="uk-navbar-item uk-logo" href="index.html">PS 70</a>
+        </div>
+        <div class="uk-navbar-right uk-margin-medium-right">
+            <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+            <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li class="uk-active"><a>About</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="project.html">Final Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <div class="uk-child-width-expand@s uk-margin-medium-left uk-margin-medium-right uk-margin-medium-top" uk-grid>
+        <div class="uk-width-1-4@m">
+            <img src="./01_intro/photo.JPG" alt="me, sometimes">
+        </div>
+        <div class="uk-width-3-4@m uk-margin-medium-bottom">
+            <h3>Howdy! I'm Russell.</h3>
+            <p>
+                My name is Russell Farnsworth, and bla bla bla... 
+                <br>
+                <br>
+                Check out my contact info below 
+            </p>
+        </div>
+        
+        <div class="uk-width-10-3@m">
+            <div class="code uk-margin-medium-bottom">
+                <div class="code-top"><span class="uk-margin-small-left"> ps70 &rsaquo; about.html</span></div>
+                <div class="code-body">
+                    <span class="linenum uk-margin-small-right uk-margin-small-left"">1</span> {
+                    <br>
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">2</span> <span class="fieldname uk-margin-medium-left"
+                        id="ok">"firstname"</span>:<span class="fieldval string">"Russell"</span>,
+                    <br>
+        
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">3</span> <span
+                        class="fieldname uk-margin-medium-left">"lastname"</span>:<span
+                        class="fieldval string">"Farnsworth"</span>,
+                    <br>
+        
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">4</span> <span
+                        class="fieldname uk-margin-medium-left">"age"</span>:<span class="fieldval number">22</span>,
+                    <br>
+        
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">5</span> <span
+                        class="fieldname uk-margin-medium-left">"location"</span>:<span class="fieldval string">"Cambridge,
+                        MA"</span>,
+                    <br>
+        
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">6</span> <span
+                        class="fieldname uk-margin-medium-left">"education"</span>: {
+                    <br>
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">7</span> <span
+                        class="fieldname uk-margin-large-left">"institution"</span>:<span class="fieldval string">"Harvard
+                        University"</span>,
+                    <br>
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">8</span> <span
+                        class="fieldname uk-margin-large-left">"degree"</span>:<span class="fieldval string">"Physics
+                        B.A."</span>,
+                    <br>
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">9</span> <span
+                        class="fieldname uk-margin-large-left">"graduation year"</span>:<span
+                        class="fieldval number">2024</span>
+                    <br>
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">10</span><span class="uk-margin-medium-left">},</span>
+                    <br>
+        
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">15</span><span
+                        class="fieldname uk-margin-medium-left">"hobbies"</span>: [<span class="fieldval">
+                        <br>
+                        <span class="linenum uk-margin-small-right uk-margin-small-left">16</span><span
+                            class="uk-margin-large-left string">"music (guitar, saxophone, percussion, singing)"</span>,
+                        <br>
+                        <span class="linenum uk-margin-small-right uk-margin-small-left">17</span><span
+                            class="uk-margin-large-left string">"weightlifting"</span>,
+                        <br>
+                        <span class="linenum uk-margin-small-right uk-margin-small-left">18</span><span
+                            class="uk-margin-large-left string">"woodworking"</span>,
+                        <br>
+                        <span class="linenum uk-margin-small-right uk-margin-small-left">19</span><span
+                            class="uk-margin-large-left string">"reading (mainly fantasy)"</span>
+                        <br>
+                        <span class="linenum uk-margin-small-right uk-margin-small-left">19</span><span
+                            class="uk-margin-large-left string">"motorcycle riding"</span>
+                        <br>
+                        <span class="linenum uk-margin-small-right uk-margin-small-left">20</span><span class="uk-margin-medium-left"></span>
+                    </span>],
+                    <br>
 
-<xmp style="display:none;">
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">22</span><span
+                        class="fieldname uk-margin-medium-left">"email"</span>:<span
+                        class="fieldval string"><a class="fieldlink" href="mailto:rsfarnsworth@college.harvard.edu">"rsfarnsworth@college.harvard.edu"</a></span>
+                    <br>
+                    <span class="linenum uk-margin-small-right uk-margin-small-left">23</span> }
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-### About Me
-
-Here is an image: 
-
-![image of embroidery](./sew.png)
-
-And here is a [link](../index.html).
-
-
-</xmp>
 </body>
-
-<script src="./strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
 
 </html>
