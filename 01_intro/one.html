@@ -20,21 +20,21 @@
     <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="../styles/main.css">
 
-    <link rel="icon" href="../../resources/icons/ps70_icon.svg">
+    <link rel="icon" href="../ps70_icon.svg">
 </head>
 
 <body>
     <nav class="uk-navbar uk-navbar-container uk-navbar-transparent uk-margin" uk-navbar>
         <div class="uk-navbar-left uk-margin-medium-left">
-            <a class="uk-navbar-item uk-logo" href="https://bellatarantino.com/ps70/">PS 70</a>
+            <a class="uk-navbar-item uk-logo" href="https://rsfarnsworth.github.io/PS70/">PS 70</a>
         </div>
         <div class="uk-navbar-right uk-margin-medium-right">
             <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
             <div class="uk-navbar-dropdown">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li><a href="https://bellatarantino.com/ps70/about.html">About</a></li>
-                    <li><a href="https://bellatarantino.com/ps70/assignments.html">Assignments</a></li>
-                    <li><a href="https://bellatarantino.com/ps70/project.html">Final Project</a></li>
+                    <li><a href="https://rsfarnsworth.github.io/PS70//about.html">About</a></li>
+                    <li><a href="https://rsfarnsworth.github.io/PS70//assignments.html">Assignments</a></li>
+                    <li><a href="https://rsfarnsworth.github.io/PS70//project.html">Final Project</a></li>
                 </ul>
             </div>
         </div>
@@ -44,6 +44,11 @@
         <div class="uk-text-center">
             <h1 class="uk-margin-medium-top assignment-title">Week 1</h1>
             <h3 class="assignment-subtitle">project proposal and personal website</h3>
+
+            <ul class="uk-subnav uk-flex-center" uk-switcher="connect: .switcher-container">
+                <li><a href="#">Personal Website</a></li>
+                <li><a href="#">Project Proposal Ideas</a></li>
+            </ul>
         </div>
 
         <div class="uk-container-small uk-margin-large-top uk-margin-auto">
@@ -56,12 +61,22 @@
                 <div class="uk-width-2-3@s">
 
                     <div class="uk-text-left">
-                        <p>
-                            Create a website and make a page with a proposal for a possible final project. Your website
-                            should include an index.html page that contains links to each assignment page, an "About"
-                            page with a short paragraph about yourself, some customization using HTML and CSS, and a
-                            final project proposal.
-                        </p>
+                        <ul class="uk-switcher switcher-container uk-margin">
+                            <li>
+                                <p>
+                                    Create a website and make a page with a proposal for a possible final project. Your website
+                                    should include an index.html page that contains links to each assignment page, an "About"
+                                    page with a short paragraph about yourself, some customization using HTML and CSS, and a
+                                    final project proposal.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Create a website and make a page with a proposal for a possible final project. Your website
+                                    should include [...] a final project proposal.
+                                </p>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
@@ -69,57 +84,89 @@
 
             <div uk-grid>
                 <div class="uk-grid-item-match uk-width-1-3@s">
-                    <div>
-                        <h3>Solution</h3>
-                    </div>
+                    <ul class="uk-switcher switcher-container uk-margin">
+                        <li>
+                            <div>
+                            <h3>Solution</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Primary Project Idea</h3>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="uk-width-2-3@s">
 
                     <div class="uk-text-left">
-                        <p>
-                            For this assignment, I decided to go with a static HTML/CSS website. I used <a
-                                href="https://getuikit.com/">UIKit</a> for a lot of the CSS and applied my own personal
-                            touches, such as the entire homepage, the Consolas font, and some of the hover effects. The
-                            photo on the front page was taken in the SEC, and the code on my computer is from this
-                            summer at CERN, where I was checking some stuff to do with the functionality of the ATLAS
-                            NSW (New Small Wheel).
-                        </p>
+                        <ul class="uk-switcher switcher-container uk-margin">
+                            <li>
+                                <p>
+                                    For this assignment, I followed the in class suggestion of searching through previous student's 
+                                    webpages for interesting template designs. Many were really cool, but the style and font of 
+                                    Bella Tarantino's website was most appealing to me so I've chosen to use that as the main template. 
+                                    I'm planning to update this as I go along and get better with HTML/CSS. Additionally, as Bella notes, 
+                                    it'd be fun to make this website design more functional accross devices as I get better with the 
+                                    code here. 
+                                    <br>
+                                    <br>
+                                    Thus far, I've changed the directory organization to emphasize the weekly structure of the course,
+                                    but this isn't a visual, web user, change. 
+                                    I've also made some changes to page layout and function in week 1 so I can learn more of how this works. 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    One of my biggest hobbies is playing and listening to music. Recently my musical focus has 
+                                    re-centered around playing guitar, which has sparked the two ideas for final projects I 
+                                    currently have. The seemingly most accessible of which (though I'm still worried about cost)
+                                    would be the creation of an effects pedal, or multi-pedal. I haven't fully decided on the
+                                    number of effects, or which effects, but I was thinking I could include two or three, 
+                                    LEDs or a small LED screen to show which effect/combination of effects are on. I'd need 
+                                    switches to step on, potentiometers or volume/levels, and a microcontroller could be used to 
+                                    control which effect circuitry is powered and sending an output although the circuitry is
+                                    probably more complicated than I realize at the moment. One effect I'd liked to have is a wha
+                                    pedal with the variable foot lever. An EQ pedal might be within range. 
+                                </p>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
             </div>
-
             <div uk-grid>
                 <div class="uk-grid-item-match uk-width-1-3@s">
-                    <div>
-                        <h3>Design</h3>
-                    </div>
+                    <ul class="uk-switcher switcher-container uk-margin">
+                        <li>
+                            <div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Secondary Project Idea</h3>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="uk-width-2-3@s">
 
                     <div class="uk-text-left">
-                        <p>
-                            I was inspired by some designs I saw online to have some sort of split screen look.  After playing around with fonts and vibes for a while, I decided I wanted to go with the classic coder vibe, Courier New.  I thought it was too basic, though, so I switched it to the font that VS Code uses, Consola.  Because Google Fonts did not have it and I could not find another CDN, I ended up hosting the font myself, an ordeal that took an hour on its own. 
-                            <br>
-                            <br>
-                            <img src="../../resources/images/week_1_homepage_design.png" alt="">
-                            <br>
-                            <br>
-                            <br>
-                            I wanted the assignment pages to be easy to template off of and to have multiple assignments per assignment page (for example, during weeks where we had multi-part assignments), which lead me to UIKit's "switcher" feature. 
-                            <br>
-                            <br>
-                            <img src="../../resources/images/week_1_switcher.png" alt="">
-                            <br>
-                            <br>
-                            <br>
-                            Other than that, the design is, as you can see, pretty simple! My site, unfortunately, is NOT mobile compatible, something I hope to ammend in the future. 
-                        </p>
+                        <ul class="uk-switcher switcher-container uk-margin">
+                            <li>
+                            </li>
+                            <li>
+                                <p>
+                                    Like above, one of my biggest hobbies is playing music. My first idea for a project was to 
+                                    make a low wattage tube electric guitar amplifier. I don't think this is as approachable as 
+                                    a pedal however because of the high voltages involved. 
+                                </p>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
             </div>
-
         </div>
     </div>
 </body>
