@@ -165,6 +165,26 @@
                                     <img src="code.png" alt="code">
                                     <br>
                                     <br>
+                                    <code>
+                                    int pot_pin=A0;<br>
+                                    int motor_pin=5;<br>
+                                    int pot_val;<br>
+                                    int motor_val;<br>
+                                    <br>
+                                    void setup() {<br>
+                                        pinMode(pot_pin, INPUT);<br>
+                                        pinMode(motor_pin, OUTPUT);<br>
+                                    }
+                                    <br>
+                                    <br>
+                                    void loop() {<br>
+                                        pot_val = analogRead(pot_pin);<br>
+                                        motor_val = map(pot_val, 0, 1023, 0, 255);<br>
+                                        analogWrite(motor_pin, motor_val);<br>
+                                    }
+                                    </code>
+                                    <br>
+                                    <br>
                                     The video of this code and the drummer boi working in action is hopefully below.
                                     <br>
                                     <br> 
