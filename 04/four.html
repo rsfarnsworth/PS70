@@ -93,7 +93,8 @@
                             <video width="530" height="350" controls>
                                 <source src="video.MOV" type="video/mp4">
                             </video>
-
+                            <br>
+                            <br>
                         </p>
                     </div>
 
@@ -156,6 +157,58 @@ void loop() {
 }
 
 </code></pre>
+<br>
+                            <br>
+                            I was able to update this shortly before class on thursday with the help of Nathan. 
+                            <pre><code>
+int buttonpin = 3;
+int motorpin = 11;
+int current_state;
+int previous_state=HIGH;
+int i_time=millis();
+int f_time=millis();
+int time_dif;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(motorpin, OUTPUT);
+  pinMode(buttonpin, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  current_state = digitalRead(buttonpin);
+  
+  if (current_state == LOW) {
+    if (previous_state == HIGH) {
+      i_time = millis();
+      previous_state = current_state;
+    }
+  }
+
+  if (current_state == HIGH) {
+    if (previous_state == LOW) {
+      f_time = millis();
+      previous_state = current_state;
+      time_dif = abs(f_time - i_time);
+    }
+  }
+
+  
+  Serial.println(time_dif);
+
+  int motor_val = map(time_dif, 0, 5000, 60, 220);
+
+  //Serial.println(motor_val);
+  analogWrite(motorpin, motor_val);
+
+}
+
+                                
+                                </code></pre>
 
                         
                     </div>
