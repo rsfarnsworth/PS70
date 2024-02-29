@@ -26,7 +26,7 @@
 <body>
     <nav class="uk-navbar uk-navbar-container uk-navbar-transparent uk-margin" uk-navbar>
         <div class="uk-navbar-left uk-margin-medium-left">
-            <a class="uk-navbar-item uk-logo" href="https://bellatarantino.com/ps70/">PS 70</a>
+            <a class="uk-navbar-item uk-logo" href="https://rsfarnsworth.github.io/PS70/"">PS 70</a>
         </div>
         <div class="uk-navbar-right uk-margin-medium-right">
             <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
@@ -85,11 +85,6 @@
                     <ul class="uk-switcher switcher-container uk-margin">
                         <li>
                             <div>
-                            <h3>Inspiration</h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
                             <h3>Process</h3>
                             </div>
                         </li>
@@ -101,47 +96,48 @@
                         <ul class="uk-switcher switcher-container uk-margin">
                             <li>
                                 <p>
-                                    For the 3D printing assignment, I decided it would be fun to design a QR code stand for the final project fair.  The QR code I printed would link to my PS70 website so that folks could view my other assignments.  My inspiration came from <a href="https://www.printables.com/model/155573-wifi-qr-code-sign">this</a> Printables project in which someone printed a QR code for WiFi access. 
+                                    For the 3D printing assignment I tried a lot of random things, but only one of them worked. 
+                                    Thanks to Nathan and Bobby for some 3D printing help. The model I eventually settled with 
+                                    was a lazy man's "ship in a bottle". For this I just drew an xz cross section of the bottle 
+                                    in fusion and then revolved it to get the file we have below, as well as what is imaged. I 
+                                    then drew a circle with a radius bigger than the neck of the bottle and extruded it, then 
+                                    moved it to just barely touch the bottem of the bottle. Then the cross section looks like 
+                                    the image below. I then used transparent petg filament and prusa slicer to send the print. 
+                                    An image of the cad and downloadable files for the cad, stl file, and sliced gcode, are below. 
+                                    <br>
+                                    <br>
+                                    <img src="cross_section.png" alt="bottle cross section cad">
+                                    <br>
+                                    <br>
+                                    <a href="russell_cylinder_in_bottle.stl" download>Download my STL file</a>
+                                    <br>
+                                    <a href="russell_cylinder_in_bottle.3mf" download>Download my gcode file</a>
+                                    <br>
+                                    <a href="bottle_assignment.f3d" download>Download my CAD file</a>
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    For this assignment, I used the <a href="https://poly.cam/">Polycam</a> application on my iPhone.  I scanned a can of red bull with (some) success, and a near and dear <a href="https://store.linefriends.com/collections/shooky">Shooky</a> the cookie plushie that I got when I was but a mere high schooler.  Perhaps because of the shininess of the can, but Polycam had some trouble modelling the Red Bull.  Where there were reflections of objects in the can, there are divots.  The Shooky model came out quite well, though, as the shape and size were captured accurately.  To get photos from every angle of the plushie, I moved it manually, which led the little metal hook at the end of the plushie to split into three.  I solved this by cropping it out.
+                                    For 3D photo scanning, I used the revopoint. I scanned anything I could that would work, which was initially nothing.
+                                    At first, I tried to scan a potentiometer which admittedly was quite small. Turns (rip) out that 
+                                    it was actually too small, and the scanner did not like it, at all. I then tried to scan a 
+                                    screwdriver, but I think this was too asymmetrically shaped. I then tried to scan my wallet, 
+                                    again I think there was the same problem. I THEN tried to scan Bobby's first model of phone holder, 
+                                    and thankfully... that did not work either. I then just grabbed the needle holder, the strawbery, 
+                                    by the sewing machine and that mostly worked. I used color scanning as well. I unfortunately 
+                                    don't have photos of this, ironically, but I have the scan files. Enjoy. 
+                                    <br>
+                                    <br>
+                                    <a href="rf_w5_scan_mesh.ply" download>Download my revopoint scan mesh</a>
+                                    <br>
+                                    <a href="rf_w5_scan_pc.ply" download>Download my revopoint point cloud</a>
                                 </p>
                             </li>
                         </ul>
 
                     </div>
                 </div>
-                <div class="uk-grid-item-match uk-width-1-3@s">
-                    <ul class="uk-switcher switcher-container uk-margin">
-                        <li>
-                            <div>
-                            <h3>Process</h3>
-                            </div>
-                        </li>
-                        <li>
-                        </li>
-                    </ul>
-                    
-                </div>
-                <div class="uk-width-2-3@s">
-                    <div class="uk-text-left">
-                        <ul class="uk-switcher switcher-container uk-margin">
-                            <li>
-                                <p>
-                                    My original thought for making the QR code was that I would get a QR code, add it to my sketch as a canvas in Fusion 360, trace over it, and extrude the squares into shapes. This sounded, though, tiring and annoying. Instead, I found the <a href="https://tapnair.github.io/QRCoder/">QRCoder add-on</a> for Fusion 360, an extension that would supposedly turn my QR code into a Fusion 360 body. It required the installation of a Python library that I am CONFIDENT I installed but it refused to recognize, so I had to settle for a second option. Instead, I found the <a href="https://github.com/hanskellner/Fusion360Image2Surface">Image2Surface add-on</a>, which was significantly easier to install. After creating a QR code and creating the mesh of it using Image2Surface, I simply combined it with a rectangular back plate and printed it. 
-                                    <br>
-                                    <br>
-                                    To make it stand, I cut a small base out of wood and slotted the QR code into it. To get the proper color contrast required for a QR code to scan, I ended up painting the raised portions yellow since I was not sure how to print with two fillaments and the printers were mostly taken up aside from the one loaded with green fillament. 
-                                </p>
-                            </li>
-                            <li>
-                            </li>
-                        </ul>
 
-                    </div>
-                </div>
                 <div class="uk-grid-item-match uk-width-1-3@s">
                     <div>
                         <h3>Photos</h3>
