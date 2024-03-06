@@ -26,7 +26,7 @@
 <body>
     <nav class="uk-navbar uk-navbar-container uk-navbar-transparent uk-margin" uk-navbar>
         <div class="uk-navbar-left uk-margin-medium-left">
-            <a class="uk-navbar-item uk-logo" href="https://bellatarantino.com/ps70/">PS 70</a>
+            <a class="uk-navbar-item uk-logo" href="https://rsfarnsworth.github.io/PS70/"">PS 70</a>
         </div>
         <div class="uk-navbar-right uk-margin-medium-right">
             <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
@@ -34,7 +34,7 @@
                 <ul class="uk-nav uk-navbar-dropdown-nav">
                     <li><a href="https://rsfarnsworth.github.io/PS70//about.html">About</a></li>
                     <li><a href="https://rsfarnsworth.github.io/PS70//assignments.html">Assignments</a></li>
-                    <li><a href="https://rsfarnsworth.github.io/PS70//.html">Final Project</a></li>
+                    <li><a href="https://rsfarnsworth.github.io/PS70//project.html">Final Project</a></li>
                 </ul>
             </div>
         </div>
@@ -43,11 +43,10 @@
     <div class="uk-container">
         <div class="uk-text-center">
             <h1 class="uk-margin-medium-top assignment-title">Week 6</h1>
-            <h3 class="assignment-subtitle">electronic input devices</h3>
+            <h3 class="assignment-subtitle">Electronic Input Devices</h3>
 
             <ul class="uk-subnav uk-flex-center" uk-switcher="connect: .switcher-container">
-                <li><a href="#">Capacitive Sensor</a></li>
-                <li><a href="#">Ultrasonic Sensor</a></li>
+                <li><a href="#">Device</a></li>
             </ul>
         </div>
 
@@ -65,179 +64,16 @@
                         <ul class="uk-switcher switcher-container uk-margin">
                             <li>
                                 <p>
-                                    Make a capacitive sensor to measure a physical quantity with your microcontroller.
-                                    Avoid the delay() function; use timers instead. Include schematics of the sensor.
-                                    Calibrate the sensor by plotting points on a graph. Discuss the relationship between
-                                    the signals recorded by your microcontroller and the physical quantities that you're
-                                    measuring.
+                                    1. Make a capacitive sensor to measure a physical quantity with your microcontroller. Avoid the delay() function; use timers instead.
+                                    <br>
+                                    2. Configure and use another sensor (temperature, microphone, etc.). Include at least one output device (it could just be an LED). Avoid the delay() function and use the C++ class structure.
+                                    <br>
+                                    3. Include schematics of each sensor.
+                                    <br>
+                                    4. Calibrate each sensor by plotting points on a graph. Discuss the relationship between the signals recorded by your microcontroller and the physical quantities that you're measuring (i.e., it is likely not a linear relationship).
+                                    <br>
+                                    5. Prepare CAD files for CNC week. Consider either 2D DXF files for routing sheet material (like plywood or OSB), or 3D STL files to mill out a (2.5D) shape.
                                 </p>
-                            </li>
-                            <li>
-                                <p>
-                                    Choose a sensor from the lab. Include schematics of the sensor. Calibrate the sensor
-                                    by plotting points on a graph. Discuss the relationship between the signals recorded
-                                    by your microcontroller and the physical quantities that you're measuring.
-                                </p>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-                <div class="uk-grid-item-match uk-width-1-3@s">
-                    <div>
-                        <h3>Sensor</h3>
-                    </div>
-                </div>
-                <div class="uk-width-2-3@s">
-
-                    <div class="uk-text-left">
-                        <ul class="uk-switcher switcher-container uk-margin">
-                            <li>
-                                <p>
-                                    For this assignment, I decided to create a capacitive button. The physical quantity
-                                    that my sensor measures is touch -- in an ideal world, the sensor maps the TOUCH
-                                    event to 1 and NO TOUCH event to 0. In the real world, we read and write a bunch of
-                                    differentials and, if no change occurs, we expect the value the sensor outputs to be
-                                    relatively constant. On the event of a touch, the readings should surpass some sort
-                                    of "threshold" which we define to be the difference between an untouched and touched
-                                    button. For the schematic below, take the blue capacitor to be the wooden block with the copper foil on it. When touched, the second pin (GND) is connected to the toucher.
-                                    <br>
-                                    <br>
-                                    <img src="../../resources/images/week_6_button_schematic.png">
-                                    
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    For this assignment, I wanted to use a sensor I was not yet familiar with, so I
-                                    tried out the ultrasonic distance sensor. To my knowledge, this sensor uses SONAR to
-                                    determine the distance between itself and an object. To measure distance, the sensor
-                                    outputs a "ping" of sorts, and we measure the time it takes for this "ping" to
-                                    reflect back to the sensor. Once we know how much time it took, we can turn this
-                                    into a measurement for distance. Schematic:
-                                    <br>
-                                    <br>
-                                    <img src="https://www.maxphi.com/wp-content/uploads/2017/08/arduino-ultrasonic-sensor-project-circuit-diagram.png">
-                                </p>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-                <div class="uk-grid-item-match uk-width-1-3@s">
-                    <div>
-                        <h3>Calibration</h3>
-                    </div>
-                </div>
-                <div class="uk-width-2-3@s">
-
-                    <div class="uk-text-left">
-                        <ul class="uk-switcher switcher-container uk-margin">
-                            <li>
-                                <p>
-                                    To make the button, I simply appended some copper foil to a wooden block (though the
-                                    block is not necessary, it adds stability) and wired it up as we learned to in lab.
-                                    Photos of the circuit are below. Using the code I wrote below, I got readings from
-                                    the sensor. We take into account some "baseline" reading in hopes of only measuring
-                                    the change of the sensor output from the baseline rather than the raw values. I
-                                    found that the differential ("delta" value) of the untouched button tended to float
-                                    around 4 to 50. The touched button returned differentials of significantly larger
-                                    values, anywhere from 160 to 350. I calibrated by graphing a few of the outputted
-                                    values versus the quantity they are measuring (y = 0 for NO TOUCH, 1 for TOUCH).
-                                    This lead me to create a threshold of about 100.
-                                    <br>
-                                    <br>
-                                    <img src="../../resources/images/week_6_calibrate_button.png">
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    To calibrate the ultrasonic sensor, I positioned a large object (my kinetic
-                                    sculpture) at various distances between 2 and 10cm from the sensor and plotted the
-                                    output to input readings. Below is a plot of the real distance (on the x-axis)
-                                    versus the reading from the sensor (y-axis). As we can see, the readings are fairly
-                                    linear.
-                                    <br>
-                                    <br>
-                                    <img src="../../resources/images/week_6_calibrate_ultrasonic_data.png">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    We then can use a linear regression calculator to fit the data, which gives us:
-                                    distance = 55.3 * time - 15.6. Plotting this with the data:
-                                    <br>
-                                    <br>
-                                    <img src="../../resources/images/week_6_calibrate_ultrasonic_fit.png">
-                                    <br>
-                                    <br>
-                                    <br>
-                                </p>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-                <div class="uk-grid-item-match uk-width-1-3@s">
-                    <div>
-                        <h3>Photos</h3>
-                    </div>
-                </div>
-                <div class="uk-width-2-3@s">
-
-                    <div class="uk-text-left">
-                        <ul class="uk-switcher switcher-container uk-margin">
-                            <li>
-                                <div class="uk-position-relative uk-visible-toggle uk-margin-medium-bottom"
-                                    tabindex="-1" uk-slider>
-
-                                    <ul class="uk-slider-items uk-child-width-1-3 uk-grid" uk-height-match=".uk-panel">
-                                        <li>
-                                            <div class="uk-panel">
-                                                <img src="../../resources/images/week_6_button_circuit.jpg" alt="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="uk-panel">
-                                                <video src="../../resources/images/week_6_button_final.mov"
-                                                    uk-video="autoplay: inview"></video>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-                                        uk-slidenav-previous uk-slider-item="previous"></a>
-                                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
-                                        uk-slidenav-next uk-slider-item="next"></a>
-
-                                </div>
-
-                            </li>
-                            <li>
-                                <div class="uk-position-relative uk-visible-toggle uk-margin-medium-bottom"
-                                    tabindex="-1" uk-slider>
-
-                                    <ul class="uk-slider-items uk-child-width-1-3 uk-grid" uk-height-match=".uk-panel">
-                                        <li>
-                                            <div class="uk-panel">
-                                                <img src="../../resources/images/week_6_ultrasonic_setup.jpg" alt="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="uk-panel">
-                                                <img src="../../resources/images/week_6_ultrasonic_setup_2.jpg" alt="">
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-                                        uk-slidenav-previous uk-slider-item="previous"></a>
-                                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
-                                        uk-slidenav-next uk-slider-item="next"></a>
-
-                                </div>
-
                             </li>
                         </ul>
 
@@ -245,6 +81,68 @@
 
                 </div>
             </div>
+
+            <div uk-grid>
+                <div class="uk-grid-item-match uk-width-1-3@s">
+                    <ul class="uk-switcher switcher-container uk-margin">
+                        <li>
+                            <div>
+                            <h3>Process</h3>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="uk-width-2-3@s">
+                    <div class="uk-text-left">
+                        <ul class="uk-switcher switcher-container uk-margin">
+                            <li>
+                                <p>
+                                    This week, I did not do that... not really. I talked with Nathan and he suggested I just 
+                                    try to build one of the circuits that goes into my final project as they are both input and 
+                                    output devices by the nature of being an audio device. I first started to build the wah circuit, 
+                                    but realized this was more complicated than I had expected. Then I started working on the 
+                                    Fuzz pedal circuitry instead. This was from <a href="http://beavisaudio.com/schematics/Colorsound-One-Knob-Fuzz-Schematic.htm">this website</a>. 
+                                    <br>
+                                    <br>
+                                    <img src="first.jpg" alt="first iteration">
+                                    <br>
+                                    <br>
+                                    <img src="second.jpg" alt="second iteration">
+                                    <br>
+                                    <br>
+                                    <img src="third.jpg" alt="third iteration">
+                                    Now, what is the difference between these three you ask? I forgot polar capacitors exist so 
+                                    I correct this in the second photo. Then, Bobby helped me realize that guitar pedal power sources
+                                    are in-fact OPPOSITE industry standard for power sources (apparently because it's easier to power
+                                    them with batteries that way). So I had to flip the capacitor and the power wires. Here I spent 
+                                    a ton of time trying to look at the signal in an osciloscope and figure out why I wasn't hearing 
+                                    anything. No luck. Nathan then gave me some presents. 
+                                    <br>
+                                    <br>
+                                    <img src="fourth.jpg" alt="fourth iteration">
+                                    Changes here include the actual 500k ohm potentiometer that the circuit schematic calls for, 
+                                    I'm using two BC108 transistors because the 109s didn't come in yet, and here I replaced the 
+                                    way too large 470pF capacitor for two 100pF capacitors in parallel to get closer to the 
+                                    200pF called for in the schematic. With these changes something weird happens. Not only does 
+                                    it take a few seconds for any sound to come through - which I am thankful for in itself - the 
+                                    volume is WAY quieter than the amp is without the circuit AND it sounds entirely clean, except
+                                    some noise... this is not even a little close to what this circuit should be doing. When I wear 
+                                    headphone and go straight into the amp, I turn the volume knob to point around 9 o-clock maximum,
+                                    any further and it's uncomfortably loud. With the circuit, I turn it to 1 or 2 o-clock. This
+                                    is utterly baffling. I will replace the corresponding transistor with BC109 when it comes in but 
+                                    I have no idea what else could be happening. I will keep staring at it, but I will simply have to move 
+                                    onto the wah circuitry next. 
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+
+            </div>
+            
 
         </div>
 
