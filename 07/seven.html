@@ -161,7 +161,105 @@
                                     figure out when it was clicked. I then tried to do something with the motor control to keep track of when to 
                                     sweep but I honestly lost track of the thread of thought and unsurprisingly the code does not work. The motor 
                                     only moves to 90. I'll try again soon using the sweep example and adding things to keep track. But I might 
-                                    need some help with this as it might be more in depth than I originally thought. 
+                                    need some help with this as it might be more in depth than I originally thought. The current, non-functional 
+                                    code, is below. 
+                                    <br>
+                                    <br>
+                                    <pre><code>
+                                        //servo operating speed can be 560 ms from 0-180 degrees, then two bottoms is 1.2 seconds, that's 50bpm, then I want
+//a 3 to 1 ratio... then I want to know the button state and record the time between 3 button clicks, average 
+//the two and convert that to a bpm
+
+#include <Servo.h>
+
+class Button{
+  //member variables
+  int buttonpin;
+  int buttonstate;
+
+  //constructor
+  public:
+  Button(int pin) {
+    buttonpin = pin; 
+    pinMode(buttonpin, INPUT_PULLUP);
+    buttonstate = HIGH; //button not pressed...could also digital read it...constructor is just setting up the pin...read website
+  }
+
+  int Update(){
+    buttonstate = digitalRead(buttonpin);
+    return buttonstate;
+  }
+};
+
+Button motorbutton(3);
+
+float first_millis;
+float second_millis;
+float third_millis;
+
+int previous_state = HIGH;
+int current_state;
+
+int click_num = 0;
+
+float time_int1;
+float time_int2;
+float bpm;
+
+Servo servoMotor;
+
+void setup() {
+  // put your setup code here, to run once:
+  servoMotor.attach(10);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  current_state = motorbutton.Update();
+  if (previous_state == HIGH && current_state == LOW) {
+    click_num = click_num + 1;
+    Serial.println("clicked");
+  }
+  if (click_num  = 1) {
+    first_millis = millis();
+  } else if (click_num = 2) {
+    second_millis = millis();
+  } else if (click_num = 3) {
+    third_millis = millis();
+  }
+
+  time_int1 = second_millis-first_millis;
+  time_int2 = third_millis-second_millis;
+
+  bpm = 6000/((time_int1+time_int2)/2);
+
+  //every beat we want the motor to be at either 0 or 180, whatever is down which 
+  //changes, so lets say down is 0, 
+  static int servoPosition = 90;
+  static bool servoDirection = false; //false if down true if up
+  static unsigned long lastMoveTime = 0;
+  unsigned long currentTime = millis();
+
+  unsigned long moveInterval = 60000 / bpm; // Move servo every beat
+  if (currentTime - lastMoveTime >= moveInterval) {
+    lastMoveTime = currentTime;
+    if (!servoDirection) {
+      servoPosition = 0; // Move down
+      servoDirection = true; // Change direction
+    } else {
+      servoPosition = 90; // Move up
+      servoDirection = false; // Change direction
+    }
+    servoMotor.write(servoPosition);
+    Serial.println("servo moved");
+  }
+
+
+}
+
+                                        
+                                        </code></pre>
                                     <br>
                                     <br>
                                     Oh right. I soldered the fuzz pedal to a proto board, and it still works. I haven't connected power and 
