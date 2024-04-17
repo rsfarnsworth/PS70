@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHYSCI 70: Introduction to Digital Fabrication</title>
+</head>
+
+<body>
+
+    <form>
+        <label for="fname">Steps (translation = steps, rotation = degrees)</label><br>
+        <input type="text" id="fname" name="fname" placeholder="first move"><br><br>
+        <input type="submit" id="trans" value="Translate">
+        <input type="submit" id="rot" value="Rotate">
+        <br>
+        <br>
+        <label for="lname">Circle</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Radius in inch"><br><br>
+        <input type="submit" id="circ" value="Submit"><br><br>
+
+        <input type="radio" id="color1" name="end_effector" value="color1">
+        <label for="html">Color 1</label><br>
+        <input type="radio" id="color2" name="end_effector" value="color2">
+        <label for="html">Color 2</label><br>
+        <input type="radio" id="mix" name="end_effector" value="mix">
+        <label for="html">Mix Colors</label><br>
+        <input type="radio" id="off" name="end_effector" value="off">
+        <label for="html">Off</label><br>
+        
+    </form>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDG3KNz1eb2WGkVcVcGtKDUvM-KrSqsgJY",
+        authDomain: "ps70-machine.firebaseapp.com",
+        databaseURL: "https://ps70-machine-default-rtdb.firebaseio.com",
+        projectId: "ps70-machine",
+        storageBucket: "ps70-machine.appspot.com",
+        messagingSenderId: "967601919005",
+        appId: "1:967601919005:web:5a20854084a3676888e2f4",
+        measurementId: "G-NKBVX24E6Z"
+    };
+        // Initialize Firebase... below is java
+    firebase.initializeApp(firebaseConfig); //this is ref
+
+    // Get a database reference to our blog
+    var ref = firebase.database().ref("/");
+
+    // make the buttons call the function below 
+    document.getElementById('trans').addEventListener('click', trans, false);
+    document.getElementById('rot').addEventListener('click', rot, false);
+    document.getElementById('circ').addEventListener('click', circ, false);
+
+    function trans(){
+        console.log("translating");
+        function getSelectedRadio() {
+            var selected = document.querySelector(
+            'input[name="end_effector"]:checked');
+            if (selected) {
+                output.innerHTML += selected
+            } else {
+                output.innerHTML += selected
+            }
+        }
+        ref.update({
+            "TRANSLATION_AMOUNT": document.getElementById('fname').value,
+            "COLOR_VAL": getSelectedRadio()
+        });
+    }
+    function rot(){
+        console.log("rotating");
+        function getSelectedRadio() {
+            var selected = document.querySelector(
+            'input[name="end_effector"]:checked');
+            if (selected) {
+                output.innerHTML += selected
+            } else {
+                output.innerHTML += selected
+            }
+        }
+        ref.update({
+            "ROTATION_AMOUNT": document.getElementById('fname').value,
+            "COLOR_VAL": getSelectedRadio()
+        });
+    }
+
+    function circ(){
+        console.log("circle");
+        function getSelectedRadio() {
+            var selected = document.querySelector(
+            'input[name="end_effector"]:checked');
+            if (selected) {
+                output.innerHTML += selected
+            } else {
+                output.innerHTML += selected
+            }
+        }
+        ref.update({
+            "CIRCLE_RADIUS": document.getElementById('lname').value,
+            "COLOR_VAL": getSelectedRadio()
+        });
+    } 
+    
+    
+</script>
+
+</body>
